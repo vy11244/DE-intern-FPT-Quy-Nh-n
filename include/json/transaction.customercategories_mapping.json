@@ -1,0 +1,24 @@
+{
+    "mapping": [
+        {
+            "source": "CustomerCategoryID",
+            "target": "CustomerCategoryID"
+        },
+        {
+            "source": "CustomerCategoryName",
+            "target": "CustomerCategoryName"
+        },
+        {
+            "source": "LastEditedBy",
+            "target": "LastEditedBy"
+        },
+        {
+            "source": "ValidFrom",
+            "target": "ValidFrom"
+        },
+        {
+            "source": "ValidTo",
+            "target": "ValidTo"
+        }
+    ]
+}

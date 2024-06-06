@@ -1,0 +1,88 @@
+{
+    "mapping": [
+        {
+            "source": "PersonID",
+            "target": "PersonID"
+        },
+        {
+            "source": "FullName",
+            "target": "FullName"
+        },
+        {
+            "source": "PreferredName",
+            "target": "PreferredName"
+        },
+        {
+            "source": "SearchName",
+            "target": "SearchName"
+        },
+        {
+            "source": "IsPermittedToLogon",
+            "target": "IsPermittedToLogon"
+        },
+        {
+            "source": "LogonName",
+            "target": "LogonName"
+        },
+        {
+            "source": "IsExternalLogonProvider",
+            "target": "IsExternalLogonProvider"
+        },
+        {
+            "source": "HashedPassword",
+            "target": "HashedPassword"
+        },
+        {
+            "source": "IsSystemUser",
+            "target": "IsSystemUser"
+        },
+        {
+            "source": "IsEmployee",
+            "target": "IsEmployee"
+        },
+        {
+            "source": "IsSalesPerson",
+            "target": "IsSalesPerson"
+        },
+        {
+            "source": "UserPreferences",
+            "target": "UserPreferences"
+        },
+        {
+            "source": "PhoneNumber",
+            "target": "PhoneNumber"
+        },
+        {
+            "source": "FaxNumber",
+            "target": "FaxNumber"
+        },
+        {
+            "source": "EmailAddress",
+            "target": "EmailAddress"
+        },
+        {
+            "source": "Photo",
+            "target": "Photo"
+        },
+        {
+            "source": "CustomFields",
+            "target": "CustomFields"
+        },
+        {
+            "source": "OtherLanguages",
+            "target": "OtherLanguages"
+        },
+        {
+            "source": "LastEditedBy",
+            "target": "LastEditedBy"
+        },
+        {
+            "source": "ValidFrom",
+            "target": "ValidFrom"
+        },
+        {
+            "source": "ValidTo",
+            "target": "ValidTo"
+        }
+    ]
+}

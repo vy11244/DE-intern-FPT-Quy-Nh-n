@@ -1,0 +1,27 @@
+Select [InvoiceID]
+      ,[CustomerID]
+      ,[BillToCustomerID]
+      ,[OrderID]
+      ,[DeliveryMethodID]
+      ,[ContactPersonID]
+      ,[AccountsPersonID]
+      ,[SalespersonPersonID]
+      ,[PackedByPersonID]
+      ,CAST([InvoiceDate] AS VARCHAR(30)) AS InvoiceDate
+      ,[CustomerPurchaseOrderNumber]
+      ,[IsCreditNote]
+      ,[CreditNoteReason]
+      ,[Comments]
+      ,[DeliveryInstructions]
+      ,[InternalComments]
+      ,[DeliveryRun]
+      ,[RunPosition]
+      ,[ReturnedDeliveryData]
+      ,[ConfirmedDeliveryTime]
+      ,[ConfirmedReceivedBy]
+	,[TotalDryItems]
+      ,[TotalChillerItems]
+      ,[LastEditedBy]
+      ,CAST([LastEditedWhen] AS VARCHAR(30)) AS LastEditedWhen
+From {table_name}
+WHERE CAST([LastEditedWhen] AS datetime2(0)) >= '{last_execution_date}'

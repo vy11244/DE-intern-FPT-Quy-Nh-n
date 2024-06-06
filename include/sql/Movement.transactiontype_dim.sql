@@ -1,0 +1,34 @@
+/*
+  The query is done to convert from bronze data into silver data
+     Database: WideWorldImporters
+     Module: MOVEMENT
+     Contributed Bronze Table: MOVEMENT.MOVEMENT_BRONZE.TRANSACTIONTYPES
+     Silver table: MOVEMENT.MOVEMENT_SILVER.TRANSACTIONTYPES
+     Done by: DuyNVT4
+     Last update when: 2024-03-21 15:20:00.0000000
+     Update content: add cmt 
+*/
+
+
+
+TRUNCATE TABLE MOVEMENT.MOVEMENT_SILVER.TRANSACTIONTYPES;
+	
+ 
+INSERT INTO MOVEMENT.MOVEMENT_SILVER.TRANSACTIONTYPES (
+    TRANSACTIONTYPEKEY,
+	WWITRANSACTIONTYPEID,
+	TRANSACTIONTYPE,
+	VALIDFROM,
+	VALIDTO
+)
+SELECT
+    CONCAT(TransactionTypeID,TO_CHAR(ValidFrom,'YYYYMMDDHH24MISSFF7')) as TransactionTypeKey,
+    TransactionTypeID AS WWITRANSACTIONTYPEID,
+    TransactionTypeName AS TRANSACTIONTYPE,
+    ValidFrom,
+    ValidTo
+FROM
+    MOVEMENT.MOVEMENT_BRONZE.TRANSACTIONTYPES
+
+
+    

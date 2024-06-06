@@ -1,0 +1,48 @@
+{
+    "mapping": [
+      {
+        "source": "StockItemTransactionID",
+        "target": "STOCKITEMTRANSACTIONID"
+      },
+      {
+        "source": "StockItemID",
+        "target": "STOCKITEMID"
+      },
+      {
+        "source": "TransactionTypeID",
+        "target": "TRANSACTIONTYPEID"
+      },
+      {
+        "source": "CustomerID",
+        "target": "CUSTOMERID"
+      },
+      {
+        "source": "InvoiceID",
+        "target": "INVOICEID"
+      },
+      {
+        "source": "SupplierID",
+        "target": "SUPPLIERID"
+      },
+      {
+        "source": "PurchaseOrderID",
+        "target": "PURCHASEORDERID"
+      },
+      {
+        "source": "TransactionOccurredWhen",
+        "target": "TRANSACTIONOCCURREDWHEN"
+      },
+      {
+        "source": "Quantity",
+        "target": "QUANTITY"
+      },
+      {
+        "source": "LastEditedBy",
+        "target": "LASTEDITEDBY"
+      },
+      {
+        "source": "LastEditedWhen",
+        "target": "LASTEDITEDWHEN"
+      }
+    ]
+}

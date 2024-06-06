@@ -1,0 +1,13 @@
+SELECT [PurchaseOrderID]
+      ,[SupplierID]
+      ,[OrderDate]
+      ,[DeliveryMethodID]
+      ,[ContactPersonID]
+      ,[ExpectedDeliveryDate]
+      ,[SupplierReference]
+      ,[IsOrderFinalized]
+      ,[Comments]
+      ,[InternalComments]
+      ,[LastEditedBy]
+      ,CAST([LastEditedWhen] AS VARCHAR(30)) AS [LastEditedWhen]
+FROM {table_name};

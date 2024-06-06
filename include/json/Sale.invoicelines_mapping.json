@@ -1,0 +1,56 @@
+{
+    "mapping": [
+      {
+        "source": "InvoiceLineID",
+        "target": "INVOICELINEID"
+      },
+      {
+        "source": "InvoiceID",
+        "target": "INVOICEID"
+      },
+      {
+        "source": "StockItemID",
+        "target": "STOCKITEMID"
+      },
+      {
+        "source": "Description",
+        "target": "DESCRIPTION"
+      },
+      {
+        "source": "PackageTypeID",
+        "target": "PACKAGETYPEID"
+      },
+      {
+        "source": "Quantity",
+        "target": "QUANTITY"
+      },
+      {
+        "source": "UnitPrice",
+        "target": "UNITPRICE"
+      },
+      {
+        "source": "TaxRate",
+        "target": "TAXRATE"
+      },
+      {
+        "source": "TaxAmount",
+        "target": "TAXAMOUNT"
+      },
+      {
+        "source": "LineProfit",
+        "target": "LINEPROFIT"
+      },
+      {
+        "source": "ExtendedPrice",
+        "target": "EXTENDEDPRICE"
+      },
+      {
+        "source": "LastEditedBy",
+        "target": "LASTEDITEDBY"
+      },
+      {
+        "source": "LastEditedWhen",
+        "target": "LASTEDITEDWHEN"
+      }
+    ]
+}

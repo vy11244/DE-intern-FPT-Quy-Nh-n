@@ -1,0 +1,40 @@
+{
+    "mapping": [
+      {
+        "source": "SupplierID",
+        "target": "SUPPLIERID"
+      },
+      {
+        "source": "SupplierName",
+        "target": "SUPPLIERNAME"
+      },
+      {
+        "source": "SupplierCategoryID",
+        "target": "SUPPLIERCATEGORYID"
+      },
+      {
+        "source": "PrimaryContactPersonID",
+        "target": "PRIMARYCONTACTPERSONID"
+      },
+      {
+        "source": "SupplierReference",
+        "target": "SUPPLIERREFERENCE"
+      },
+      {
+        "source": "PaymentDays",
+        "target": "PAYMENTDAYS"
+      },
+      {
+        "source": "DeliveryPostalCode",
+        "target": "DELIVERYPOSTALCODE"
+      },
+      {
+        "source": "ValidFrom",
+        "target": "VALIDFROM"
+      },
+      {
+        "source": "ValidTo",
+        "target": "VALIDTO"
+      }
+    ]
+}

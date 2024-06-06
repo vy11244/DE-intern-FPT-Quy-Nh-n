@@ -1,0 +1,19 @@
+trigger:
+  - dev
+
+pr: none
+
+stages:
+  - stage: deploy
+    jobs:
+      - job: deploy_image
+        pool:
+          vmImage: "windows-latest"
+        steps:
+          - script: |
+              Invoke-WebRequest -Uri "https://install.astronomer.io" -OutFile "install-astronomer.ps1"
+              .\install-astronomer.ps1 | Invoke-Expression
+              astro deploy ${ASTRO_DEPLOYMENT_ID} -f
+            env:
+              ASTRO_API_TOKEN: $(ASTRO_API_TOKEN)
+              ASTRO_DEPLOYMENT_ID: $(ASTRO_DEPLOYMENT_ID)

@@ -1,0 +1,76 @@
+{
+    "mapping": [
+      {
+        "source": "StockItemID",
+        "target": "STOCKITEMID"
+      },
+      {
+        "source": "StockItemName",
+        "target": "STOCKITEMNAME"
+      },
+      {
+        "source": "ColorID",
+        "target": "COLORID"
+      },
+      {
+        "source": "UnitPackageID",
+        "target": "UNITPACKAGEID"
+      },
+      {
+        "source": "OuterPackageID",
+        "target": "OUTERPACKAGEID"
+      },
+      {
+        "source": "Brand",
+        "target": "BRAND"
+      },
+      {
+        "source": "Size",
+        "target": "SIZE"
+      },
+      {
+        "source": "LeadTimeDays",
+        "target": "LEADTIMEDAYS"
+      },
+      {
+        "source": "QuantityPerOuter",
+        "target": "QUANTITYPEROUTER"
+      },
+      {
+        "source": "IsChillerStock",
+        "target": "ISCHILLERSTOCK"
+      },
+      {
+        "source": "Barcode",
+        "target": "BARCODE"
+      },
+      {
+        "source": "TaxRate",
+        "target": "TAXRATE"
+      },
+      {
+        "source": "UnitPrice",
+        "target": "UNITPRICE"
+      },
+      {
+        "source": "RecommendedRetailPrice",
+        "target": "RECOMMENDEDRETAILPRICE"
+      },
+      {
+        "source": "TypicalWeightPerUnit",
+        "target": "TYPICALWEIGHTPERUNIT"
+      },
+      {
+        "source": "Photo",
+        "target": "PHOTO"
+      },
+      {
+        "source": "ValidFrom",
+        "target": "VALIDFROM"
+      },
+      {
+        "source": "ValidTo",
+        "target": "VALIDTO"
+      }
+    ]
+}

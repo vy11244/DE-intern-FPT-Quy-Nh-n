@@ -1,0 +1,20 @@
+{
+    "mapping": [
+      {
+        "source": "BuyingGroupName",
+        "target": "BUYINGGROUPNAME"
+      },
+      {
+        "source": "BuyingGroupID",
+        "target": "BUYINGGROUPID"
+      },
+      {
+        "source": "ValidFrom",
+        "target": "VALIDFROM"
+      },
+      {
+        "source": "ValidTo",
+        "target": "VALIDTO"
+      }
+    ]
+}

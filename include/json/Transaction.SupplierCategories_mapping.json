@@ -1,0 +1,20 @@
+{
+    "mapping": [
+      {
+        "source": "SupplierCategoryID",
+        "target": "SUPPLIERCATEGORYID"
+      },
+      {
+        "source": "SupplierCategoryName",
+        "target": "SUPPLIERCATEGORYNAME"
+      },
+      {
+        "source": "ValidFrom",
+        "target": "VALIDFROM"
+      },
+      {
+        "source": "ValidTo",
+        "target": "VALIDTO"
+      }
+    ]
+}

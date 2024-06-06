@@ -1,0 +1,60 @@
+{
+    "mapping": [
+      {
+        "source": "OrderID",
+        "target": "ORDERID"
+      },
+      {
+        "source": "CustomerID",
+        "target": "CUSTOMERID"
+      },
+      {
+        "source": "SalespersonPersonID",
+        "target": "SALESPERSONPERSONID"
+      },
+      {
+        "source": "PickedByPersonID",
+        "target": "PICKEDBYPERSONID"
+      },
+      {
+        "source": "ContactPersonID",
+        "target": "CONTACTPERSONID"
+      },
+      {
+        "source": "OrderDate",
+        "target": "ORDERDATE"
+      },
+      {
+        "source": "CustomerID",
+        "target": "CUSTOMERID"
+      },
+      {
+        "source": "SalespersonPersonID",
+        "target": "SALESPERSONPERSONID"
+      },
+      {
+        "source": "PickedByPersonID",
+        "target": "PICKEDBYPERSONID"
+      },
+      {
+        "source": "ContactPersonID",
+        "target": "CONTACTPERSONID"
+      },
+      {
+        "source": "BackorderOrderID",
+        "target": "BACKORDERORDERID"
+      },
+      {
+        "source": "PickingCompletedWhen",
+        "target": "PICKINGCOMPLETEDWHEN"
+      },
+      {
+        "source": "LastEditedBy",
+        "target": "LASTEDITEDBY"
+      },
+      {
+        "source": "LastEditedWhen",
+        "target": "LASTEDITEDWHEN"
+      }
+    ]
+} 

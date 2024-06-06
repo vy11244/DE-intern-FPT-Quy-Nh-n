@@ -1,0 +1,36 @@
+{
+    "mapping": [
+      {
+        "source": "StockItemID",
+        "target": "STOCKITEMID"
+      },
+      {
+        "source": "QuantityOnHand",
+        "target": "QUANTITYONHAND"
+      },
+      {
+        "source": "BinLocation",
+        "target": "BINLOCATION"
+      },
+      {
+        "source": "LastStocktakeQuantity",
+        "target": "LASTSTOCKTAKEQUANTITY"
+      },
+      {
+        "source": "LastCostPrice",
+        "target": "LASTCOSTPRICE"
+      },
+      {
+        "source": "ReorderLevel",
+        "target": "REORDERLEVEL"
+      },
+      {
+        "source": "TargetStockLevel",
+        "target": "TARGETSTOCKLEVEL"
+      },
+      {
+        "source": "LastEditedWhen",
+        "target": "LASTEDITEDWHEN"
+      }
+    ]
+}

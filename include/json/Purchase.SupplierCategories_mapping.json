@@ -1,0 +1,24 @@
+{
+    "mapping": [
+      {
+        "source": "SupplierCategoryID",
+        "target": "SUPPLIERCATEGORYID"
+      },
+      {
+        "source": "SupplierCategoryName",
+        "target": "SUPPLIERCATEGORYNAME"
+      },
+      {
+        "source": "LastEditedBy",
+        "target": "LASTEDITEDBY"
+      },
+      {
+        "source": "ValidFrom",
+        "target": "VALIDFROM"
+      },
+      {
+        "source": "ValidTo",
+        "target": "VALIDTO"
+      }
+    ]
+  } 

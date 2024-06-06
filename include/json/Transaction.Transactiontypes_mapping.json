@@ -1,0 +1,20 @@
+{
+    "mapping": [
+      {
+        "source": "TransactionTypeID",
+        "target": "TRANSACTIONTYPEID"
+      },
+      {
+        "source": "TransactionTypeName",
+        "target": "TRANSACTIONTYPENAME"
+      },
+      {
+        "source": "ValidFrom",
+        "target": "VALIDFROM"
+      },
+      {
+        "source": "ValidTo",
+        "target": "VALIDTO"
+      }
+    ]
+}

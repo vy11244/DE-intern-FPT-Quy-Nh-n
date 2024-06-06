@@ -1,0 +1,20 @@
+{
+    "mapping": [
+      {
+        "source": "PersonID",
+        "target": "PERSONID"
+      },
+      {
+        "source": "FullName",
+        "target": "FULLNAME"
+      },
+      {
+        "source": "ValidFrom",
+        "target": "VALIDFROM"
+      },
+      {
+        "source": "ValidTo",
+        "target": "VALIDTO"
+      }
+    ]
+}  

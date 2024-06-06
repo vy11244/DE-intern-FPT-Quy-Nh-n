@@ -1,0 +1,185 @@
+/*
+  The query is done to convert from bronze data into silver data
+     Database: WideWorldImporters
+     Module: TRANSACTION
+     Contributed Bronze Table: TRANSACTION.TRANSACTION_BRONZE.TRANSACTIONTYPES, 
+			       TRANSACTION.TRANSACTION_BRONZE.CUSTOMERTRANSACTIONS, 
+			       TRANSACTION.TRANSACTION_BRONZE.SUPPLIERTRANSACTIONS,
+     Contributed Silver Table: TRANSACTION.TRANSACTION_SILVER.SUPPLIERS,
+			       TRANSACTION.TRANSACTION_SILVER.CUSTOMER,
+			       TRANSACTION.TRANSACTION_SILVER.PAYMENTMETHOD,
+			       TRANSACTION.TRANSACTION_SILVER.TRANSACTIONTYPE
+     Silver Table: TRANSACTION.TRANSACTION_SILVER.TRANSACTION
+     Author: Trungpq20
+     Last update when: 2024-03-14 
+     Update content: Update/insert
+*/
+MERGE INTO TRANSACTION.TRANSACTION_SILVER.TRANSACTION AS target
+USING (
+    -- Transaction Merged Data (TMD)
+    SELECT
+        ROW_NUMBER() OVER (ORDER BY (SELECT NULL)) AS TRANSACTIONKEY,
+        TMD.DATEKEY,
+        CASE
+            WHEN C1.CUSTOMERKEY IS NULL THEN '0' 
+            ELSE C1.CUSTOMERKEY
+        END AS CUSTOMERKEY,
+        CASE
+            WHEN C2.CUSTOMERKEY IS NULL THEN '0' 
+            ELSE C2.CUSTOMERKEY 
+        END AS BILLTOCUSTOMERKEY,
+        CASE
+            WHEN S.SUPPLIERKEY IS NULL THEN '0' 
+            ELSE S.SUPPLIERKEY 
+        END AS SUPPLIERKEY,
+        TP.TRANSACTIONTYPEKEY AS TRANSACTIONTYPEKEY,
+        CASE
+            WHEN PM.PAYMENTMETHODKEY IS NULL THEN '0' 
+            ELSE PM.PAYMENTMETHODKEY 
+        END AS PAYMENTMETHODKEY,
+        TMD.WWICUSTOMERTRANSACTIONID,
+        TMD.WWISUPPLIERTRANSACTIONID,
+        TMD.WWIINVOICEID,
+        TMD.WWIPURCHASEORDERID,
+        TMD.SUPPLIERINVOICENUMBER,
+        TMD.TOTALEXCLUDINGTAX,
+        TMD.TAXAMOUNT,
+        TMD.TOTALINCLUDINGTAX,
+        TMD.OUTSTANDINGBALANCE,
+        TMD.ISFINALIZED
+    FROM (
+        SELECT
+            NULL AS WWISupplierTransactionID, 
+            CT.CUSTOMERTRANSACTIONID AS WWICustomerTransactionID,
+            CT.TRANSACTIONDATE AS DateKey,
+            CT.AMOUNTEXCLUDINGTAX AS TotalExcludingTax, 
+            CT.TAXAMOUNT AS TaxAmount,
+            CT.TRANSACTIONAMOUNT AS TotalIncludingTax,
+            CT.OUTSTANDINGBALANCE,
+            CT.ISFINALIZED, 
+            NULL AS WWISupplierID, 
+            CT.CUSTOMERID AS WWIBillToCustomerID,
+            CT.TRANSACTIONTYPEID AS WWITransactionTypeID, 
+            CT.PAYMENTMETHODID AS WWIPaymentMethodID, 
+            CT.LASTEDITEDWHEN AS LastModifiedWhen, 
+            COALESCE(I.CustomerID, CT.CustomerID) AS WWICustomerID, 
+            CT.invoiceid AS WWIInvoiceID, 
+            NULL AS WWIPurchaseOrderID, 
+            NULL AS SupplierInvoiceNumber 
+        FROM TRANSACTION.TRANSACTION_BRONZE.CUSTOMERTRANSACTIONS AS CT
+        LEFT JOIN SALE.SALE_BRONZE.INVOICES AS I 
+        ON I.invoiceid = CT.invoiceid
+        UNION ALL
+        SELECT
+            ST.SUPPLIERTRANSACTIONID AS WWISupplierTransactionID, 
+            NULL AS WWICustomerTransactionID,
+            ST.TRANSACTIONDATE AS DateKey,
+            ST.AMOUNTEXCLUDINGTAX AS TotalExcludingTax, 
+            ST.TAXAMOUNT AS TaxAmount,
+            ST.TRANSACTIONAMOUNT AS TotalIncludingTax,
+            ST.OUTSTANDINGBALANCE,
+            ST.ISFINALIZED, 
+            ST.SUPPLIERID AS WWISupplierID,
+            NULL AS WWIBillToCustomerID,
+            ST.TRANSACTIONTYPEID AS WWITransactionTypeID,
+            ST.PAYMENTMETHODID AS WWIPaymentMethodID,
+            ST.LASTEDITEDWHEN AS LastModifiedWhen, 
+            NULL AS WWICustomerID,
+            NULL AS WWIInvoiceID,
+            ST.PURCHASEORDERID AS WWIPurchaseOrderID,
+            ST.SUPPLIERINVOICENUMBER AS SupplierInvoiceNumber
+        FROM TRANSACTION.TRANSACTION_BRONZE.SUPPLIERTRANSACTIONS AS ST
+    ) AS TMD
+    LEFT JOIN TRANSACTION.TRANSACTION_SILVER.SUPPLIERS AS S 
+        ON S.WWISUPPLIERID = TMD.WWISUPPLIERID
+            AND TMD.LastModifiedWhen > s.ValidFrom
+            AND TMD.LastModifiedWhen < s.ValidTo
+    LEFT JOIN TRANSACTION.TRANSACTION_SILVER.CUSTOMER AS C1 
+        ON C1.WWICUSTOMERID = TMD.WWICustomerID
+            AND TMD.LastModifiedWhen > C1.ValidFrom
+            AND TMD.LastModifiedWhen < C1.ValidTo
+    LEFT JOIN TRANSACTION.TRANSACTION_SILVER.CUSTOMER AS C2 
+        ON C2.WWICUSTOMERID = TMD.WWIBillToCustomerID
+            AND TMD.LastModifiedWhen > C2.ValidFrom
+            AND TMD.LastModifiedWhen < C2.ValidTo
+    LEFT JOIN TRANSACTION.TRANSACTION_SILVER.PAYMENTMETHOD AS PM
+        ON PM.WWIPAYMENTMETHODID = TMD.WWIPAYMENTMETHODID
+            AND TMD.LastModifiedWhen > PM.ValidFrom
+            AND TMD.LastModifiedWhen < PM.ValidTo
+    INNER JOIN TRANSACTION.TRANSACTION_SILVER.TRANSACTIONTYPE AS TP 
+        ON TP.WWITRANSACTIONTYPEID = TMD.WWITRANSACTIONTYPEID
+            AND TMD.LastModifiedWhen > TP.ValidFrom
+            AND TMD.LastModifiedWhen < TP.ValidTo
+
+) AS source
+    ON target.TRANSACTIONKEY = source.TRANSACTIONKEY
+    -- AND target.DATEKEY = source.DATEKEY
+    -- AND target.CUSTOMERKEY = source.CUSTOMERKEY
+    -- AND target.BILLTOCUSTOMERKEY = source.BILLTOCUSTOMERKEY
+    -- AND target.SUPPLIERKEY = source.SUPPLIERKEY
+    -- AND target.TRANSACTIONTYPEKEY = source.TRANSACTIONTYPEKEY
+    -- AND target.PAYMENTMETHODKEY = source.PAYMENTMETHODKEY
+    -- AND target.WWICUSTOMERTRANSACTIONID = source.WWICUSTOMERTRANSACTIONID
+    -- AND target.WWISUPPLIERTRANSACTIONID = source.WWISUPPLIERTRANSACTIONID
+    -- AND target.WWIINVOICEID = source.WWIINVOICEID
+    -- AND target.WWIPURCHASEORDERID = source.WWIPURCHASEORDERID
+    -- AND target.SUPPLIERINVOICENUMBER = source.SUPPLIERINVOICENUMBER
+WHEN MATCHED THEN
+	-- Update data 
+    UPDATE SET
+        target.TRANSACTIONKEY = source.TRANSACTIONKEY,
+        target.DATEKEY = source.DATEKEY,
+        target.CUSTOMERKEY = source.CUSTOMERKEY,
+        target.BILLTOCUSTOMERKEY = source.BILLTOCUSTOMERKEY,
+        target.SUPPLIERKEY = source.SUPPLIERKEY,
+        target.TRANSACTIONTYPEKEY = source.TRANSACTIONTYPEKEY,
+        target.PAYMENTMETHODKEY = source.PAYMENTMETHODKEY,
+        target.WWICUSTOMERTRANSACTIONID = source.WWICUSTOMERTRANSACTIONID,
+        target.WWISUPPLIERTRANSACTIONID = source.WWISUPPLIERTRANSACTIONID,
+        target.WWIINVOICEID = source.WWIINVOICEID,
+        target.WWIPURCHASEORDERID = source.WWIPURCHASEORDERID,
+        target.SUPPLIERINVOICENUMBER = source.SUPPLIERINVOICENUMBER,
+        target.TOTALEXCLUDINGTAX = source.TOTALEXCLUDINGTAX,
+        target.TAXAMOUNT = source.TAXAMOUNT,
+        target.TOTALINCLUDINGTAX = source.TOTALINCLUDINGTAX,
+        target.OUTSTANDINGBALANCE = source.OUTSTANDINGBALANCE,
+        target.ISFINALIZED = source.ISFINALIZED
+WHEN NOT MATCHED THEN
+	-- Insert new data from the source table into the destination table when there is no match.
+    INSERT (
+        TRANSACTIONKEY,
+        DATEKEY,
+        CUSTOMERKEY,
+        BILLTOCUSTOMERKEY,
+        SUPPLIERKEY,
+        TRANSACTIONTYPEKEY,
+        PAYMENTMETHODKEY,
+        WWICUSTOMERTRANSACTIONID,
+        WWISUPPLIERTRANSACTIONID,
+        WWIINVOICEID,
+        WWIPURCHASEORDERID,
+        SUPPLIERINVOICENUMBER,
+        TOTALEXCLUDINGTAX,
+        TAXAMOUNT,
+        TOTALINCLUDINGTAX,
+        OUTSTANDINGBALANCE,
+        ISFINALIZED
+    ) VALUES (
+        source.TRANSACTIONKEY,
+        source.DATEKEY,
+        source.CUSTOMERKEY,
+        source.BILLTOCUSTOMERKEY,
+        source.SUPPLIERKEY,
+        source.TRANSACTIONTYPEKEY,
+        source.PAYMENTMETHODKEY,
+        source.WWICUSTOMERTRANSACTIONID,
+        source.WWISUPPLIERTRANSACTIONID,
+        source.WWIINVOICEID,
+        source.WWIPURCHASEORDERID,
+        source.SUPPLIERINVOICENUMBER,
+        source.TOTALEXCLUDINGTAX,
+        source.TAXAMOUNT,
+        source.TOTALINCLUDINGTAX,
+        source.OUTSTANDINGBALANCE,
+        source.ISFINALIZED
+    );

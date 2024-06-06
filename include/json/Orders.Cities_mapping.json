@@ -1,0 +1,32 @@
+{
+       "mapping": [
+        {
+           "source": "CityID",
+           "target": "CITYID"
+        },
+        {
+           "source": "CityName",
+           "target": "CITYNAME"
+        },
+        {
+          "source": "StateProvinceID",
+          "target": "STATEPROVINCEID"
+        },
+        {
+            "source": "Location",
+            "target": "LOCATION"
+        },
+        {
+            "source": "LatestRecordedPopulation",
+            "target": "LATESTRECORDEDPOPULATION"
+        },
+        {
+           "source": "ValidFrom",
+           "target": "VALIDFROM"
+        },
+        {
+           "source": "ValidTo",
+           "target": "VALIDTO"
+        }
+       ]
+   }   

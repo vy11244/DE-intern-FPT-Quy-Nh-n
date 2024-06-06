@@ -1,0 +1,32 @@
+{
+       "mapping": [
+         {
+           "source": "CountryID",
+           "target": "COUNTRYID"
+         },
+         {
+           "source": "CountryName",
+           "target": "COUNTRYNAME"
+         },
+         {
+           "source": "Continent",
+           "target": "CONTINENT"
+         },
+         {
+            "source": "Region",
+            "target": "REGION"
+         },
+         {
+            "source": "SubRegion",
+            "target": "SUBREGION"
+         },
+         {
+           "source": "ValidFrom",
+           "target": "VALIDFROM"
+         },
+         {
+           "source": "ValidTo",
+           "target": "VALIDTO"
+         }
+       ]
+   }    

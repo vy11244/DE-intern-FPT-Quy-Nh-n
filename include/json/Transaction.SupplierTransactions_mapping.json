@@ -1,0 +1,56 @@
+{
+    "mapping": [
+      {
+        "source": "SupplierTransactionID",
+        "target": "SUPPLIERTRANSACTIONID"
+      },
+      {
+        "source": "SupplierID",
+        "target": "SUPPLIERID"
+      },
+      {
+        "source": "TransactionTypeID",
+        "target": "TRANSACTIONTYPEID"
+      },
+      {
+        "source": "PaymentMethodID",
+        "target": "PAYMENTMETHODID"
+      },
+      {
+        "source": "TransactionDate",
+        "target": "TRANSACTIONDATE"
+      },
+      {
+        "source": "PurchaseOrderID",
+        "target": "PURCHASEORDERID"
+      },
+      {
+        "source": "SupplierInvoiceNumber",
+        "target": "SUPPLIERINVOICENUMBER"
+      },
+      {
+        "source": "AmountExcludingTax",
+        "target": "AMOUNTEXCLUDINGTAX"
+      },
+      {
+        "source": "TaxAmount",
+        "target": "TAXAMOUNT"
+      },
+      {
+        "source": "TransactionAmount",
+        "target": "TRANSACTIONAMOUNT"
+      },
+      {
+        "source": "OutstandingBalance",
+        "target": "OUTSTANDINGBALANCE"
+      },
+      {
+        "source": "IsFinalized",
+        "target": "ISFINALIZED"
+      },
+      {
+        "source": "LastEditedWhen",
+        "target": "LASTEDITEDWHEN"
+      }
+    ]
+}

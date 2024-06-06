@@ -1,0 +1,20 @@
+{
+    "mapping": [
+      {
+        "source": "ColorID",
+        "target": "COLORID"
+      },
+      {
+        "source": "ColorName",
+        "target": "COLORNAME"
+      },
+      {
+        "source": "ValidFrom",
+        "target": "VALIDFROM"
+      },
+      {
+        "source": "ValidTo",
+        "target": "VALIDTO"
+      }
+    ]
+}

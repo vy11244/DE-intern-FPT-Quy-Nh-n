@@ -1,0 +1,24 @@
+{
+    "mapping": [
+      {
+        "source": "PurchaseOrderID",
+        "target": "PURCHASEORDERID"
+      },
+      {
+        "source": "SupplierID",
+        "target": "SUPPLIERID"
+      },
+      {
+        "source": "OrderDate",
+        "target": "ORDERDATE"
+      },
+      {
+        "source": "IsOrderFinalized",
+        "target": "ISORDERFINALIZED"
+      },
+      {
+        "source": "LastEditedWhen",
+        "target": "LASTEDITEDWHEN"
+      }
+    ]
+}

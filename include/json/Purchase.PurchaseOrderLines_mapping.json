@@ -1,0 +1,32 @@
+{
+  "mapping": [
+    {
+      "source": "PurchaseOrderLineID",
+      "target": "PURCHASEORDERLINEID"
+    },
+    {
+      "source": "PurchaseOrderID",
+      "target": "PURCHASEORDERID"
+    },
+    {
+      "source": "StockItemID",
+      "target": "STOCKITEMID"
+    },
+    {
+      "source": "OrderedOuters",
+      "target": "ORDEREDOUTERS"
+    },
+    {
+      "source": "ReceivedOuters",
+      "target": "RECEIVEDOUTERS"  
+    },
+    {
+      "source": "PackageTypeID",
+      "target": "PACKAGETYPEID"
+    },
+    {
+      "source": "LastEditedWhen",
+      "target": "LASTEDITEDWHEN"
+    }
+  ]
+}

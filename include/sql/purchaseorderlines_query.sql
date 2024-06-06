@@ -1,0 +1,13 @@
+SELECT [PurchaseOrderLineID]
+      ,[PurchaseOrderID]
+      ,[StockItemID]
+      ,[OrderedOuters]
+      ,[Description]
+      ,[ReceivedOuters]
+      ,[PackageTypeID]
+      ,[ExpectedUnitPricePerOuter]
+      ,[LastReceiptDate]
+      ,[IsOrderLineFinalized]
+      ,[LastEditedBy]
+      ,CAST([LastEditedWhen] AS VARCHAR(30)) AS [LastEditedWhen]
+FROM {table_name};

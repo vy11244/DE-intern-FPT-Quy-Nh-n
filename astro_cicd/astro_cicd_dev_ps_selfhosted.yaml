@@ -1,0 +1,19 @@
+trigger:
+  - dev
+
+pr: none
+
+stages:
+  - stage: deploy
+    jobs:
+      - job: deploy_image
+        pool: ojt
+        steps:
+          - script: |
+              echo 'Debug environment variable'
+              echo %ASTRO_API_TOKEN%
+              echo %ASTRO_DEPLOYMENT_ID%
+              astro deploy %ASTRO_DEPLOYMENT_ID% -f
+            env:
+              ASTRO_API_TOKEN: $(ASTRO_API_TOKEN)
+              ASTRO_DEPLOYMENT_ID: $(ASTRO_DEPLOYMENT_ID)

@@ -1,0 +1,44 @@
+{
+  "mapping": [
+    {
+      "source": "CustomerID",
+      "target": "CUSTOMERID"
+    },
+    {
+      "source": "CustomerName",
+      "target": "CUSTOMERNAME"
+    },
+    {
+      "source": "BillToCustomerID",
+      "target": "BILLTOCUSTOMERID"
+    },
+    {
+      "source": "CustomerCategoryID",
+      "target": "CUSTOMERCATEGORYID"
+    },
+    {
+      "source": "BuyingGroupID",
+      "target": "BUYINGGROUPID"
+    },
+    {
+      "source": "DeliveryPostalCode",
+      "target": "DELIVERYPOSTALCODE"
+    },
+    {
+      "source": "PrimaryContactPersonID",
+      "target": "PRIMARYCONTACTPERSONID"
+    },
+    {
+      "source": "LastEditedBy",
+      "target": "LASTEDITEDBY"
+    },
+    {
+      "source": "ValidFrom",
+      "target": "VALIDFROM"
+    },
+    {
+      "source": "ValidTo",
+      "target": "VALIDTO"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+    "mapping": [
+      {
+        "source": "OrderLineID",
+        "target": "ORDERLINEID"
+      },
+      {
+        "source": "OrderID",
+        "target": "ORDERID"
+      },
+      {
+        "source": "StockItemID",
+        "target": "STOCKITEMID"
+      },
+      {
+        "source": "PackageTypeID",
+        "target": "PACKAGETYPEID"
+      },
+      {
+        "source": "PickingCompletedWhen",
+        "target": "PICKINGCOMPLETEDWHEN"
+      },
+      {
+        "source": "Description",
+        "target": "DESCRIPTION"
+      },
+      {
+        "source": "Quantity",
+        "target": "QUANTITY"
+      },
+      {
+        "source": "UnitPrice",
+        "target": "UNITPRICE"
+      },
+      {
+        "source": "TaxRate",
+        "target": "TAXRATE"
+      },
+      {
+        "source": "LastEditedBy",
+        "target": "LASTEDITEDBY"
+      },
+      {
+        "source": "LastEditedWhen",
+        "target": "LASTEDITEDWHEN"
+      }
+    ]
+} 

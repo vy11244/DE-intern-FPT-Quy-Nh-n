@@ -1,0 +1,56 @@
+{
+    "mapping": [
+      {
+        "source": "InvoiceID",
+        "target": "INVOICEID"
+      },
+      {
+        "source": "CustomerID",
+        "target": "CUSTOMERID"
+      },
+      {
+        "source": "BillToCustomerID",
+        "target": "BILLTOCUSTOMERID"
+      },
+      {
+        "source": "OrderID",
+        "target": "ORDERID"
+      },
+      {
+        "source": "DeliveryMethodID",
+        "target": "DELIVERYMETHODID"
+      },
+      {
+        "source": "ContactPersonID",
+        "target": "CONTACTPERSONID"
+      },
+      {
+        "source": "SalespersonPersonID",
+        "target": "SALESPERSONPERSONID"
+      },
+      {
+        "source": "ConfirmedDeliveryTime",
+        "target": "CONFIRMEDDELIVERYTIME"
+      },
+      {
+        "source": "InvoiceDate",
+        "target": "INVOICEDATE"
+      },
+      {
+        "source": "TotalDryItems",
+        "target": "TOTALDRYITEMS"
+      },
+      {
+        "source": "TotalChillerItems",
+        "target": "TOTALCHILLERITEMS"
+      },
+      {
+        "source": "LastEditedBy",
+        "target": "LASTEDITEDBY"
+      },
+      {
+        "source": "LastEditedWhen",
+        "target": "LASTEDITEDWHEN"
+      }
+    ]
+}

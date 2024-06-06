@@ -1,0 +1,17 @@
+trigger:
+  - dev
+
+pr: none
+
+stages:
+  - stage: deploy
+    jobs:
+      - job: deploy_image
+        pool: ojt
+        steps:
+          - script: |
+              curl -sSL install.astronomer.io | sudo bash -s
+              astro deploy ${ASTRO_DEPLOYMENT_ID} -f
+            env:
+              ASTRO_API_TOKEN: $(ASTRO_API_TOKEN)
+              ASTRO_DEPLOYMENT_ID: $(ASTRO_DEPLOYMENT_ID)

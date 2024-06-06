@@ -1,0 +1,28 @@
+{
+       "mapping": [
+        {
+          "source": "StateProvinceID",
+          "target": "STATEPROVINCEID"
+        },
+        {
+          "source": "StateProvinceName",
+          "target": "STATEPROVINCENAME"
+        },
+        {
+          "source": "CountryID",
+          "target": "COUNTRYID"
+        },
+        {
+          "source": "SalesTerritory",
+          "target": "SALESTERRITORY"
+        },
+        {
+          "source": "ValidFrom",
+          "target": "VALIDFROM"
+        },
+        {
+          "source": "ValidTo",
+          "target": "VALIDTO"
+        }
+       ]
+   }  

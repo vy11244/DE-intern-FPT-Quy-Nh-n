@@ -1,0 +1,20 @@
+{
+    "mapping": [
+      {
+        "source": "PackageTypeID",
+        "target": "PACKAGETYPEID"
+      },
+      {
+        "source": "PackageTypeName",
+        "target": "PACKAGETYPENAME"
+      },
+      {
+        "source": "ValidFrom",
+        "target": "VALIDFROM"
+      },
+      {
+        "source": "ValidTo",
+        "target": "VALIDTO"
+      }
+    ]
+}
